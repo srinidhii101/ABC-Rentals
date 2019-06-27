@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddRecord">
+
+    <TextView
+        android:id="@+id/recordPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD DETAILS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/addOwnerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Owner's name: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:layout_below="@+id/recordPage"
+        />
+
+
+    <EditText
+        android:id="@+id/enterOwnerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/addOwnerName"
+        />
+
+    <TextView
+        android:id="@+id/ownerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the address: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:layout_below="@+id/enterOwnerName"
+        />
+
+    <Button
+        android:id="@+id/getLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ownerAddress"
+        android:layout_below="@+id/enterOwnerName"
+        android:layout_centerHorizontal="true"
+        android:text="GPS Location"
+        />
+
+
+    <EditText
+        android:id="@+id/enterownerAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/ownerAddress"
+        />
+
+    <TextView
+        android:id="@+id/houseDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the description of the House: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:layout_below="@+id/enterownerAddress"
+        />
+
+
+    <EditText
+        android:id="@+id/enterhouseDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/houseDescription"
+        />
+
+    <Button
+        android:id="@+id/clickPhotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enterhouseDescription"
+        android:layout_centerHorizontal="true"
+        android:text="Click Photos"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" />
+
+    <Button
+        android:id="@+id/submitDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/clickPhotos"
+        android:layout_centerHorizontal="true"
+        android:text="Submit"
+        />
+
+
+</RelativeLayout>
