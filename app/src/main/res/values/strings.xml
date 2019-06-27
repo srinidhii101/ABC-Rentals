@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Scroll View</string>
+    <string name="Address"><u>Address</u></string>
+    <string name="Amenities"><u>Amenities</u></string>
+</resources>
