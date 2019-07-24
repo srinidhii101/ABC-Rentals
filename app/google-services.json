@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "20735391400",
+    "firebase_url": "https://abcrentals-55fef.firebaseio.com",
+    "project_id": "abcrentals-55fef",
+    "storage_bucket": "abcrentals-55fef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20735391400:android:2f37801e858f56b9",
+        "android_client_info": {
+          "package_name": "com.example.abcrentals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20735391400-gnh506okka3du0k57sliid9bl39lg6s5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.abcrentals",
+            "certificate_hash": "1e8451d3b8d1014879e7f08ef1184f2e32bc3936"
+          }
+        },
+        {
+          "client_id": "20735391400-5mu636dm7cn0r630djchmtc701iurga6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP-EskVZjzFxZCyD72IKHUaRAW1q1PvN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20735391400-5mu636dm7cn0r630djchmtc701iurga6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

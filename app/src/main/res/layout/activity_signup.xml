@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+
+            android:layout_gravity="center"
+
+            android:layout_marginBottom="100px"
+            android:src="@drawable/register" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:padding="50px"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtSignupEmail"
+            android:hint="Email"
+            android:drawableLeft="@drawable/iconsize"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_round"
+            android:textColorHint="@android:color/darker_gray"
+            android:layout_marginBottom="50px"
+
+
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+
+
+            />
+
+        <EditText
+            android:id="@+id/txtSignupPassword"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="50px"
+            android:padding="50px"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_round"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:drawableLeft="@drawable/passwordicon"
+            android:textColor="@android:color/black"
+            android:inputType="textPassword"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="18sp"
+
+
+            />
+
+        <EditText
+            android:id="@+id/txtsignupCnfPassword"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_round"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:padding="50px"
+            android:inputType="textPassword"
+android:drawableLeft="@drawable/passwordicon"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="18sp"
+
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="98dp"
+        android:background="@drawable/button_round"
+        android:text="Sign Up"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
