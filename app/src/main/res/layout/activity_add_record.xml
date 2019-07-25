@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".AddRecord">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300px">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="250px"
+                android:layout_height="250px"
+                android:layout_below="@id/submitDetails"
+                android:layout_marginStart="16dp"
+                />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="250px"
+                android:background="#c1c1c1"
+                android:layout_height="250px"
+                android:layout_marginLeft="20dp"></ImageView>
+                <!--android:src="@drawable/c"/>-->
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="250px"
+                android:background="#c1c1c1"
+                android:layout_height="250px"
+                android:layout_marginLeft="30dp"></ImageView>
+                <!--android:src="@drawable/d"/>-->
+            <!--<ImageView-->
+                <!--android:id="@+id/imageView3"-->
+                <!--android:layout_width="300dp"-->
+                <!--android:background="#c1c1c1"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginLeft="30dp"></ImageView>-->
+                <!--android:src="@drawable/e"/>-->
+        </LinearLayout>
+    </HorizontalScrollView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/recordPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="320px"
+        android:gravity="center"
+        android:text="ADD NEW INTEREST"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_marginTop="250px"
+        android:id="@+id/addOwnerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Owner's name: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_below="@+id/recordPage"
+        />
+
+
+    <EditText
+        android:id="@+id/enterOwnerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/addOwnerName"
+
+        />
+
+    <TextView
+        android:id="@+id/addPlaceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterOwnerName"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Place Name "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/placename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/addPlaceName"
+
+        />
+    <TextView
+        android:id="@+id/ownerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the address: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_below="@+id/placename"
+        />
+
+    <Button
+        android:id="@+id/getLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ownerAddress"
+        android:layout_below="@+id/placename"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gpsicon"
+        android:layout_marginBottom="90px"
+
+
+        />
+
+
+    <EditText
+        android:id="@+id/enterownerAddress"
+        android:layout_width="match_parent"
+        android:layout_marginTop="100px"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/ownerAddress"
+        android:layout_marginVertical="10px"
+        />
+
+    <TextView
+        android:id="@+id/houseDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the description of the House: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_below="@+id/enterownerAddress"
+        />
+
+
+    <EditText
+        android:id="@+id/enterhouseDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/houseDescription"
+        />
+
+    <TextView
+        android:id="@+id/addContactNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterhouseDescription"
+        android:layout_marginTop="11dp"
+        android:gravity="center"
+        android:text="Contact Number :"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/ContactNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/addContactNumber"
+
+        />
+
+    <TextView
+        android:id="@+id/addRent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ContactNumber"
+        android:layout_marginTop="31dp"
+        android:gravity="center"
+        android:text="Rent:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/Rent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/addRent"
+
+        />
+
+    <TextView
+        android:id="@+id/addAmenneties"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Rent"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Amenities"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/Amenneties"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10sp"
+        android:layout_below="@+id/addAmenneties"
+
+        />
+
+    <TextView
+        android:id="@+id/addRooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Amenneties"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Rooms"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/Rooms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addRooms"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="10sp"
+
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+
+    <Button
+        android:id="@+id/clickPhotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Rooms"
+        android:background="@drawable/button_round"
+        android:layout_centerHorizontal="true"
+        android:text="Click Photos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@id/submitDetails"-->
+        <!--android:layout_marginStart="16dp"-->
+        <!--/>-->
+
+    <Button
+        android:id="@+id/submitDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/clickPhotos"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50px"
+        android:background="@drawable/button_round"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+</RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

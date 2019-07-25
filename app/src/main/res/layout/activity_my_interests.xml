@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".myInterests">
+
+    <TextView
+        android:id="@+id/homePageWecome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        />
+    <android.support.v7.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="@color/colorAccent"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/card1details1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOUSE DETAILS"
+                />
+
+            <TextView
+                android:id="@+id/card1Name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Owner's name: "
+                android:layout_below="@+id/card1details1"
+                />
+
+            <TextView
+                android:id="@+id/card1Name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mike John"
+                android:layout_toRightOf="@id/card1Name1"
+                android:layout_below="@id/card1details1"
+                />
+
+            <TextView
+                android:id="@+id/card1Address1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address: "
+                android:layout_below="@+id/card1Name1"
+                />
+
+            <TextView
+                android:id="@+id/card1Address2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6967, Bayers Road, Halifax."
+                android:layout_toRightOf="@id/card1Address1"
+                android:layout_below="@id/card1Name2"
+                />
+
+            <TextView
+                android:id="@+id/card1Rent1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rent: "
+                android:layout_below="@+id/card1Address1"
+                />
+
+            <TextView
+                android:id="@+id/card1Rent2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$800/month"
+                android:layout_toRightOf="@id/card1Rent1"
+                android:layout_below="@id/card1Address2"
+                />
+
+            <Button
+                android:id="@+id/viewPhotos"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/card1Rent2"
+                android:layout_marginLeft="80dp"
+                android:text="View Photos"
+                android:textSize="8dp"
+                />
+
+            <Button
+                android:id="@+id/call"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/card1Rent2"
+                android:layout_marginLeft="150dp"
+                android:text="Call"
+                android:textSize="10dp"
+                />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/newRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/homePageWecome"
+        android:text="Add New Record"
+        />
+
+
+</RelativeLayout>
