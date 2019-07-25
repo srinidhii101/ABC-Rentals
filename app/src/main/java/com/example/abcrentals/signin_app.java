@@ -55,7 +55,12 @@ else
 
 
                         Toast.makeText(  signin_app.this,"Welcome !",Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(getApplicationContext(),SearchPage.class));
+                        Intent intent = new Intent(getApplicationContext(),SearchPage.class);
+
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        getSharedPreferences("Name", MODE_PRIVATE).edit().putBoolean("isLoggedIn", true).commit();
+                        startActivity(intent);
 
 
                     } else {
@@ -71,4 +76,6 @@ else
         });
 
     }
+
+
 }

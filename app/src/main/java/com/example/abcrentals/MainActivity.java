@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Typeface face= Typeface.createFromAsset(getAssets(),"fonts/AlexBrush-Regular.ttf");
         txtMotto.setTypeface(face);
 
+
+        //This is a Home page of the application
+
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

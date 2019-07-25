@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.abcrentals">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!--/* <uses-permission android:name="android.permission.CAMERA"/>-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.Camera.any"
+        android:required="true"/>
+    <uses-feature android:name="android.hardware.Camera.autofocus" android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -9,17 +23,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchPage"></activity>
-        <activity android:name=".signup" android:screenOrientation="portrait"></activity>
-        <activity android:name=".signin_app" android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.abcrentals.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities"
+            >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/path"
+                tools:replace="android:resource"
+                />
+        </provider>
+        <activity
+            android:name=".add_record"
+            android:label="@string/title_activity_add_record"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Logout" />
+        <activity android:name=".SearchPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".signup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".signin_app"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DetailActivity"
             android:parentActivityName=".SearchPage">

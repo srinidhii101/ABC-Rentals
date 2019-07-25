@@ -1,6 +1,9 @@
 package com.example.abcrentals;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -15,18 +18,29 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchPage extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
+    public FirebaseAuth fbAuth;
+    public  static FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
 
+        fbAuth = FirebaseAuth.getInstance();
+        fab = findViewById(R.id.fab);
         // Adding Toolbar to Main screen
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,6 +63,14 @@ public class SearchPage extends AppCompatActivity {
             supportActionBar.setDisplayHomeAsUpEnabled(true);
         }
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplication(),add_record.class);
+                startActivity(intent);
+            }
+        });
         // Set behavior of Navigation drawer
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -56,7 +78,23 @@ public class SearchPage extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         // Set item in checked state
+                        if(menuItem.getItemId() == R.id.profile){
+                            Intent intent = new Intent(getApplication(), Logout.class);
+                            startActivity(intent);
+                        }
+                        else if(menuItem.getItemId() ==R.id.Home)
+                        {
+                            Intent intent = new Intent(getApplication(),SearchPage.class);
+                            startActivity(intent);
+                        }
+                        else if(menuItem.getItemId() ==R.id.AddInterests)
+                        {
+                            Intent intent = new Intent(getApplication(),add_record.class);
+                            startActivity(intent);
+                        }
+
                         menuItem.setChecked(true);
+
                         // TODO: handle navigation
                         // Closing drawer on item click
                         mDrawerLayout.closeDrawers();
@@ -64,15 +102,8 @@ public class SearchPage extends AppCompatActivity {
                     }
                 });
 
-        // Adding Floating Action Button to bottom right of main view
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(v, "Hello Snackbar!",
-                        Snackbar.LENGTH_LONG).show();
-            }
-        });
+
+
     }
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
@@ -80,6 +111,44 @@ public class SearchPage extends AppCompatActivity {
         adapter.addFragment(new CardContentFragment(), "Search Listings");
         adapter.addFragment(new ListContentFragment(), "My Interests");
         viewPager.setAdapter(adapter);
+
+        final FloatingActionButton fabObj = findViewById(R.id.fab);
+        fabObj.hide();
+        viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+
+
+
+                                              @Override
+                                              public void onPageSelected(int position) {
+                                                  if(position==0)
+                                                  {
+                                                      fabObj.hide();
+                                                  }
+                                                  else
+                                                  {
+                                                      fabObj.show();
+                                                  }
+                                              }
+                                          }
+
+
+        );
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(fbAuth!=null){
+            FirebaseUser user = fbAuth.getCurrentUser();
+            if(user==null)
+            {
+                Intent intent = new Intent(this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }
     }
 
     static class Adapter extends FragmentPagerAdapter {
@@ -92,8 +161,12 @@ public class SearchPage extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
+
             return mFragmentList.get(position);
         }
+
+
+
 
         @Override
         public int getCount() {
@@ -111,6 +184,11 @@ public class SearchPage extends AppCompatActivity {
         }
     }
 
+
+
+
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -125,5 +203,6 @@ public class SearchPage extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     }
 
